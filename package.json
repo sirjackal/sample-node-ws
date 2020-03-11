@@ -1,0 +1,46 @@
+{
+	"devDependencies": {
+		"@types/dotenv": "^4.0.3",
+		"@types/es6-promise": "^3.3.0",
+		"@types/express": "^4.11.1",
+		"@types/jest": "^22.2.3",
+		"@types/mongodb": "^3.0.15",
+		"@types/mysql": "^2.15.4",
+		"jest": "^22.4.3",
+		"npm-run-all": "^4.1.2",
+		"ts-jest": "^22.4.4",
+		"ts-loader": "^4.2.0",
+		"typescript": "^2.8.1",
+		"webpack": "^4.6.0",
+		"webpack-cli": "^2.0.14",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"name": "ws-test",
+	"version": "1.0.0",
+	"description": "Invia node.js web service test server",
+	"main": "./dist/server.js",
+	"directories": {
+		"test": "tests"
+	},
+	"dependencies": {
+		"axios": "^0.18.0",
+		"body-parser": "^1.18.2",
+		"dotenv": "^5.0.1",
+		"express": "^4.16.3",
+		"express-promise-router": "^3.0.2",
+		"idx": "^2.3.0",
+		"mongodb": "^3.0.7",
+		"mysql": "^2.15.0",
+		"nodemon": "^1.17.3"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack --mode production",
+		"run": "node ./dist/bundle.js",
+		"start": "webpack --mode development && npm-run-all --parallel watch:webpack watch:nodemon",
+		"watch:webpack": "webpack --watch --mode development",
+		"watch:nodemon": "nodemon --watch dist --watch .env ./dist/bundle.js"
+	},
+	"author": "Jan Krepsky",
+	"license": "ISC"
+}
